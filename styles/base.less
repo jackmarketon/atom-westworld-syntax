@@ -64,7 +64,8 @@ atom-text-editor .search-results .marker.current-result .region {
 // Syntax styles
 
 .syntax--comment {
-  color: @light-gray;
+  color: @orange;
+  font-style: italic
 }
 
 .syntax--keyword {
@@ -92,14 +93,14 @@ atom-text-editor .search-results .marker.current-result .region {
 }
 
 .syntax--constant {
-  color: @orange;
+  color: @cyan;
 
   &.syntax--character.syntax--escape {
     color: @cyan;
   }
 
   &.syntax--numeric {
-    color: @orange;
+    color: @syntax-text-color;
   }
 
   &.syntax--other.syntax--color {
@@ -112,14 +113,14 @@ atom-text-editor .search-results .marker.current-result .region {
 }
 
 .syntax--variable {
-  color: @red;
+  color: @blue;
 
   &.syntax--interpolation {
     color: darken(@red, 10%);
   }
 
   &.syntax--parameter.syntax--function {
-    color: @syntax-text-color;
+    color: @light-orange;
   }
 }
 
@@ -130,7 +131,7 @@ atom-text-editor .search-results .marker.current-result .region {
 
 .syntax--string {
   color: @green;
-
+  font-style: italic;
 
   &.syntax--regexp {
     color: @cyan;
@@ -148,10 +149,14 @@ atom-text-editor .search-results .marker.current-result .region {
 .syntax--punctuation {
   &.syntax--definition {
     &.syntax--comment {
-      color: @light-gray;
+      color: @orange;
+      font-style: italic;
     }
 
-    &.syntax--string,
+    &.syntax--string {
+      color: @green;
+    }
+
     &.syntax--variable,
     &.syntax--parameters,
     &.syntax--array {
@@ -192,6 +197,10 @@ atom-text-editor .search-results .marker.current-result .region {
       color: @blue;
     }
   }
+
+  &.syntax--type {
+    color: @purple;
+  }
 }
 
 .syntax--entity {
@@ -200,7 +209,6 @@ atom-text-editor .search-results .marker.current-result .region {
   }
   &.syntax--name.syntax--type {
     color: @light-orange;
-    text-decoration: underline;
   }
 
   &.syntax--other.syntax--inherited-class {
@@ -215,8 +223,7 @@ atom-text-editor .search-results .marker.current-result .region {
   }
 
   &.syntax--name.syntax--tag {
-    color: @red;
-    text-decoration: underline;
+    color: @blue;
   }
 
   &.syntax--other.syntax--attribute-name {
@@ -248,6 +255,13 @@ atom-text-editor .search-results .marker.current-result .region {
   &.syntax--separator {
     background-color: @gray;
     color: @syntax-text-color;
+  }
+
+  &.syntax--function {
+    .syntax--variable {
+      color: @light-orange;
+      font-style: italic;
+    }
   }
 }
 
